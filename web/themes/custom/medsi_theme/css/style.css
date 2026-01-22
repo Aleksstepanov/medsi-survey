@@ -23,6 +23,10 @@
   font-display: swap;
 }
 
+/* header {
+  display: none !important;
+} */
+
 /* --- Base layout --- */
 :root {
   --bg: #f6f7fb;
@@ -85,15 +89,20 @@ p {
 }
 
 /* --- Card feel for main content --- */
+
 main,
-.layout-content,
 .block-system-main-block {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 24px;
+  height: 100%;
 }
+
+/* .layout-content {
+  height: 80vh;
+} */
 
 /* --- Links --- */
 a {
@@ -268,6 +277,301 @@ legend {
   color: #fff;
   padding: 14px 22px;
   font-size: 16px;
+}
+
+.medsi-landing {
+  padding: 8px 0;
+  height: calc(100vh - 70px);
+}
+
+.medsi-hero {
+  border-radius: 20px;
+  padding: 36px;
+  background:
+    radial-gradient(
+      1200px 600px at 20% 0%,
+      rgba(99, 102, 241, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 80% 30%,
+      rgba(16, 185, 129, 0.12),
+      transparent 55%
+    ),
+    #111827;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.medsi-hero__content {
+  max-width: 780px;
+}
+
+.medsi-hero__title {
+  margin: 0 0 12px;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+}
+
+.medsi-hero__subtitle {
+  margin: 0 0 22px;
+  font-size: 18px;
+  opacity: 0.86;
+  color: #ffffff;
+}
+
+.medsi-hero__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.medsi-hero__note {
+  margin-top: 18px;
+  font-size: 14px;
+  opacity: 0.78;
+}
+.medsi-hero__note a {
+  color: #fff;
+}
+
+.medsi-page {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.medsi-steps {
+  margin: 16px 0 22px;
+  padding-left: 20px;
+}
+.medsi-steps li {
+  margin: 10px 0;
+}
+
+.medsi-hero__note a {
+  color: #fff;
+  opacity: 0.8;
+}
+.medsi-hero__note a:hover {
+  opacity: 1;
+}
+
+/* Webform page wrapper */
+.medsi-page {
+  max-width: 920px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+.medsi-form-header {
+  margin-bottom: 14px;
+}
+
+.medsi-form-header__title {
+  margin: 0 0 6px;
+  font-size: 32px;
+}
+
+.medsi-form-header__subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* On webform pages, the main content is already “card-like” via main/.block-system-main-block */
+.medsi-main {
+  /* no extra styles required */
+}
+
+/* Confirmation page */
+.medsi-confirm {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+
+.medsi-confirm__title {
+  margin: 0 0 10px;
+  font-size: 28px;
+}
+
+.medsi-confirm__text {
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+.medsi-confirm__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.medsi-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  background: linear-gradient(135deg, #111827, #374151);
+  color: #fff;
+}
+
+.medsi-btn:hover {
+  opacity: 0.92;
+}
+
+.medsi-confirm__note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.webform-confirmation .messages,
+.webform-confirmation .messages__wrapper,
+.webform-confirmation .message {
+  display: none !important;
+}
+
+/* hr-report */
+.medsi-info {
+  background: #f3f4f6;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: var(--muted);
+  margin: 12px 0 16px;
+  font-size: 14px;
+}
+
+.medsi-empty {
+  background: var(--card);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.medsi-empty__title {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.medsi-empty__text {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Company operational links */
+.medsi-company {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.medsi-company__title {
+  margin: 0 0 14px;
+}
+
+.medsi-company__meta {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.medsi-company__subtitle {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+.medsi-company__links {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.medsi-link {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.medsi-link:last-child {
+  border-bottom: 0;
+}
+
+.medsi-link__label {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.medsi-link__row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.medsi-link__code {
+  flex: 1 1 520px;
+  background: #f3f4f6;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: block;
+  overflow-x: auto;
+}
+
+.medsi-link__btn {
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  background: linear-gradient(135deg, #111827, #374151);
+  color: #fff;
+}
+.medsi-link__btn:hover {
+  opacity: 0.92;
+}
+
+.medsi-company__hint {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* --- Empty state (HR report) --- */
+.medsi-empty {
+  text-align: center;
+  padding: 48px 24px;
+  border: 1px dashed var(--border);
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+}
+
+.medsi-empty__icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.medsi-empty__title {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+.medsi-empty__text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 /* Mobile */

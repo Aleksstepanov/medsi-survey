@@ -1,0 +1,49 @@
+{#
+/**
+ * Company view: operational links for system admin.
+ * Shows absolute URLs and "Copy" buttons.
+ */
+#}
+
+{% set token = node.field_company_token.value %}
+{% set origin = medsi_origin|default('') %}
+
+{% set survey_link = origin ~ '/webform/medsi_survey?company_token=' ~ token %}
+{% set hr_link = origin ~ '/report/hr-summary?company_token=' ~ token %}
+
+<div class="medsi-company">
+
+  <h1 class="medsi-company__title">Компания: {{ label }}</h1>
+
+  <div class="medsi-company__meta">
+    <div><b>Company token:</b> <code>{{ token }}</code></div>
+    {% if content.field_hr_email is defined %}<div><b>HR email:</b> {{ content.field_hr_email }}</div>{% endif %}
+    {% if content.field_medsi_email is defined %}<div><b>MEDSI email:</b> {{ content.field_medsi_email }}</div>{% endif %}
+    {% if content.field_status is defined %}<div><b>Status:</b> {{ content.field_status }}</div>{% endif %}
+  </div>
+
+  <div class="medsi-company__links">
+    <h2 class="medsi-company__subtitle">Ссылки</h2>
+
+    <div class="medsi-link">
+      <div class="medsi-link__label">Опрос для сотрудников</div>
+      <div class="medsi-link__row">
+        <code class="medsi-link__code">{{ survey_link }}</code>
+        <button class="medsi-link__btn" type="button" data-copy="{{ survey_link }}">Скопировать</button>
+      </div>
+    </div>
+
+    <div class="medsi-link">
+      <div class="medsi-link__label">HR-отчёт</div>
+      <div class="medsi-link__row">
+        <code class="medsi-link__code">{{ hr_link }}</code>
+        <button class="medsi-link__btn" type="button" data-copy="{{ hr_link }}">Скопировать</button>
+      </div>
+    </div>
+
+    <div class="medsi-company__hint">
+      Эти ссылки можно отправить HR. HR не нужен логин в систему.
+    </div>
+  </div>
+
+</div>

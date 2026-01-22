@@ -1,0 +1,21 @@
+{#
+/**
+ * Custom confirmation page for Webform.
+ */
+#}
+
+<div class="medsi-confirm">
+  <h2 class="medsi-confirm__title">Спасибо! Опрос отправлен.</h2>
+  <p class="medsi-confirm__text">
+    Ответы приняты и будут использованы для формирования рекомендаций.
+  </p>
+
+  <div class="medsi-confirm__actions">
+    <a class="medsi-btn" href="{{ url('<front>') }}">Вернуться на главную</a>
+    {# если хочешь кнопку “пройти ещё раз” — включим позже #}
+  </div>
+
+  <p class="medsi-confirm__note">
+    Если вы проходите опрос по ссылке от HR — просто закройте страницу.
+  </p>
+</div>

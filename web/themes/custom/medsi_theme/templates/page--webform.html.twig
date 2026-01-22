@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Page override for Webform pages.
+ */
+#}
+
+<div class="medsi-page">
+
+  {# Твой “продуктовый” заголовок над формой #}
+  <header class="medsi-form-header">
+    <h1 class="medsi-form-header__title">Медицинский опрос сотрудника</h1>
+    <p class="medsi-form-header__subtitle">
+      Заполнение займет 3–5 минут. Ответы используются для формирования рекомендаций.
+    </p>
+  </header>
+
+  <main class="medsi-main">
+    {{ page.content }}
+  </main>
+
+</div>

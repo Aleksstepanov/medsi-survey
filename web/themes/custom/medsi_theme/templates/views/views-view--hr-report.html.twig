@@ -1,0 +1,39 @@
+{#
+/**
+ * Custom wrapper for HR report view.
+ */
+#}
+
+<div class="medsi-report">
+
+  {% if header %}
+    <div class="medsi-report__header">
+      {{ header }}
+    </div>
+  {% endif %}
+
+  <div class="medsi-info">
+    Данные обновляются автоматически по мере прохождения опроса сотрудниками.
+    Если ответов пока мало — сводка будет выглядеть короткой, это нормально.
+  </div>
+
+  {% if rows %}
+    <div class="medsi-report__table">
+      {{ rows }}
+    </div>
+  {% else %}
+    <div class="medsi-empty">
+      <h2 class="medsi-empty__title">Пока нет данных</h2>
+      <p class="medsi-empty__text">
+        Никто ещё не прошёл опрос по этому токену. Передайте сотрудникам ссылку на опрос.
+      </p>
+    </div>
+  {% endif %}
+
+  {% if footer %}
+    <div class="medsi-report__footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+
+</div>

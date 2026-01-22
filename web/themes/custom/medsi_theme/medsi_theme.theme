@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Theme hooks and preprocess functions for medsi_theme.
+ */
+
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function medsi_theme_preprocess_node(array &$variables): void {
+  if (empty($variables['node']) || !($variables['node'] instanceof NodeInterface)) {
+    return;
+  }
+
+  $node = $variables['node'];
+
+  // Only for Company nodes.
+  if ($node->bundle() !== 'company') {
+    return;
+  }
+
+  $request = \Drupal::request();
+
+  // Example: https://example.com or http://localhost:8080
+  $origin = $request->getSchemeAndHttpHost();
+
+  // If Drupal is installed in a subdirectory, include it (e.g. /drupal).
+  $base_path = rtrim($request->getBasePath(), '/');
+
+  $variables['medsi_origin'] = $origin . $base_path;
+}

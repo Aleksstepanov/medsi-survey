@@ -4,12 +4,28 @@ medsi_reports.hr_summary:
     _controller: '\Drupal\medsi_reports\Controller\HrSummaryController::summary'
     _title: "HR Summary"
   requirements:
-    _role: "hr_manager"
+    _permission: "access content"
 
 medsi_reports.company_dashboard:
   path: "/company-dashboard"
   defaults:
     _controller: '\Drupal\medsi_reports\Controller\CompanyDashboardController::page'
     _title: "Company dashboard"
+  requirements:
+    _permission: "access content"
+
+medsi_reports.home:
+  path: "/home"
+  defaults:
+    _controller: '\Drupal\medsi_reports\Controller\LandingController::home'
+    _title: "MEDSI Survey"
+  requirements:
+    _permission: "access content"
+
+medsi_reports.how_it_works:
+  path: "/how-it-works"
+  defaults:
+    _controller: '\Drupal\medsi_reports\Controller\LandingController::howItWorks'
+    _title: "Как пользоваться"
   requirements:
     _permission: "access content"
