@@ -1,0 +1,14 @@
+name: MEDSI Theme
+type: theme
+description: Simple clean theme for MEDSI survey demo.
+core_version_requirement: ^10
+
+base theme: stable9
+
+libraries:
+  - medsi_theme/global
+
+regions:
+  header: Header
+  content: Content
+  footer: Footer

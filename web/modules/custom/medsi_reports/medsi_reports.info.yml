@@ -1,0 +1,7 @@
+name: MEDSI Reports
+type: module
+description: Custom reports for HR and MEDSI based on Webform submissions.
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - webform:webform

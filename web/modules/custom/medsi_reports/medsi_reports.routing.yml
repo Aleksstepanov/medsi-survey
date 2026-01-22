@@ -1,0 +1,15 @@
+medsi_reports.hr_summary:
+  path: "/report/hr-summary"
+  defaults:
+    _controller: '\Drupal\medsi_reports\Controller\HrSummaryController::summary'
+    _title: "HR Summary"
+  requirements:
+    _role: "hr_manager"
+
+medsi_reports.company_dashboard:
+  path: "/company-dashboard"
+  defaults:
+    _controller: '\Drupal\medsi_reports\Controller\CompanyDashboardController::page'
+    _title: "Company dashboard"
+  requirements:
+    _permission: "access content"
